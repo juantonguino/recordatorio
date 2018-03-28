@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Notas
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content >
+  <ion-list>
+    <ion-item *ngFor="let note of notes">
+      {{ note.title }}
+      <div style="float:right">
+      <button ion-button padding color="danger" (click)="deleteItem(note)">Elimanar</button>
+      <button ion-button padding color="primary" (click)="itemSelected(note)">Ver</button>
+      </div>
+    </ion-item>
+  </ion-list>
+
+  <div padding>
+    <button ion-button block (click)="createNote()">Crear Nota</button>
+  </div>
+
+</ion-content>
